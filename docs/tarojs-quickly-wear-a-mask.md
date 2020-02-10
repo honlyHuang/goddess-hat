@@ -2,11 +2,11 @@
 
 > 珍爱生命，从我做起，快点戴上口罩吧。(*￣︶￣)
 
-采用 `Tarojs` 跨端框架，采用腾讯云源开发模式，采用基于腾讯云的五官分析的人脸识别，实现了自动为头像戴上口罩的功能。
+采用 `Taro` 跨端框架，采用腾讯云源开发模式，采用基于腾讯云的五官分析的人脸识别，实现了自动为头像戴上口罩的功能。
 
 源码地址：https://github.com/shenghanqin/goddess-hat。
 
-作者简介：盛瀚钦，沪江CCtalk前端开发工程师，Tarojs框架的issue维护志愿者，主要侧重于前端UI编写和团队文档建设。
+作者简介：盛瀚钦，沪江CCtalk前端开发工程师，Taro 框架的issue维护志愿者，主要侧重于前端UI编写和团队文档建设。
 
 **主要功能**
 
@@ -25,13 +25,13 @@
 ![](https://n1other.hjfile.cn/res7/2020/02/10/1b0add271a294e2bf1140d124eaf595b.JPG)
 
 
-### Tarojs云开发模式
+### Taro 云开发模式
 
 > Taro 是一套遵循 React 语法规范的 多端开发 解决方案。使用 Taro，我们可以只书写一套代码，再通过 Taro 的编译工具，将源代码分别编译出可以在不同端（微信/百度/支付宝/字节跳动/QQ/京东小程序、快应用、H5、React-Native 等）运行的代码。
 
 本来呢，我的方案是小程序配合放在腾讯云个人服务器搭建的 `nodejs` + `express`实现的API服务。只不过呢，我个人配置的API请求不够理想，因为从小程序到腾讯云个人服务器再到腾讯云服务，中间路径比较长。
 
-此时发现，Tarojs已经集成了腾讯云云开发模式，从小程序+个人服务器切换到腾讯云开发模式，也就花了一个多小时的时间（历经了熟悉云开发、配置云开发环境等小细节）。
+此时发现，Taro 已经集成了腾讯云云开发模式，从小程序+个人服务器切换到腾讯云开发模式，也就花了一个多小时的时间（历经了熟悉云开发、配置云开发环境等小细节）。
 
 ```js
 // taro/src/pages/wear-a-mask
@@ -127,7 +127,7 @@ let shapeList = info.map(item => {
 * 绘制口罩（计算最终口罩的大小及中心位置 旋转角度,移动画布原点到口罩的中心位置，旋转画布 并绘制口罩）
 
 在微信小程序中，canvas画图需要将网络图片变为本地图片的，如果绘制时再下载，存在下载时间挺长且容易下载失败的风险，还是使用本地图片更加靠谱一些。
-在Tarojs项目，canvas画图的`drawImage(src, 0, 0, 300, 300)`方法，如果src为`require('../../images/xxx.png')`的话，一定要记住修改以下配置，否则小程序就会报http `500`错误。
+在 Taro 项目，canvas画图的`drawImage(src, 0, 0, 300, 300)`方法，如果src为`require('../../images/xxx.png')`的话，一定要记住修改以下配置，否则小程序就会报http `500`错误。
 
 ```
 {
@@ -145,5 +145,5 @@ let shapeList = info.map(item => {
 * 小程序：圣诞帽：[jasscia/ChristmasHat](https://github.com/jasscia/ChristmasHat)
 * face-api.js [justadudewhohacks/face-api.js](https://github.com/justadudewhohacks/face-api.js)
 * 腾讯云人脸识别： [https://cloud.tencent.com/product/facerecognition](https://cloud.tencent.com/product/facerecognition)
-* Tarojs版本图片裁剪：[SunnyQjm/taro-cropper](https://github.com/SunnyQjm/taro-cropper)
+* Taro 版本图片裁剪：[SunnyQjm/taro-cropper](https://github.com/SunnyQjm/taro-cropper)
 * 病毒演化模拟器：[qqqdu/zhonghuajia](https://github.com/qqqdu/zhonghuajia)
